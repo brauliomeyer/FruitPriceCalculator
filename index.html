@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="plunker">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FruitPriceCalculator</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css.map">
+    <link rel="stylesheet" href="css/app.css">
+    
+    <!-- JS Files -->
+    <script type="text/javascript" src="js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/angular/angular.js"></script>
+    <!-- <script type="text/javascript" src="js/angular/angular.min.js.map"></script> -->
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+      <div class="blog-masthead">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item" href="#">New features</a>
+          <a class="blog-nav-item" href="#">Press</a>
+          <a class="blog-nav-item" href="#">New hires</a>
+          <a class="blog-nav-item" href="#">About</a>
+        </nav>
+    </div>
+
+    <div class="container">
+
+     <div data-ng-controller="MainCtrl">
+        <form role="form">
+        <table border="1" cellpadding="4" cellspacing="4">
+            <tr>
+                <th colspan="2">{{name}}</th>
+            </tr>
+            <tr>
+                <td>    
+                    <div data-ng-controller="InputCtrl"><br>
+        Fruit: <select ng-options="fruit.name for fruit in fruits" ng-model="selfruit"></select><br>
+        Qty: <input type="text" ng-model="qty"><br>
+                       <input class="btn btn-success" type="button" value="submit" ng-click="calcprice();">
+                    </div><br>
+                </td>
+                <td>
+                    <div data-ng-controller="OutputCtrl"><br>
+                       According to <br> {{name}} <br> 
+                       The price = {{price}}
+                        
+                    </div><br>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    </div><!-- /.container -->
+    
+
+</body>
+</html>
